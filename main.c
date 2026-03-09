@@ -54,6 +54,9 @@ int main() {
             printf("Grade: %.2f\n", pointer[i].grade);
         }
 
+        free(pointer[i].name);
+        pointer[i].name = NULL;
+
         free(pointer);
         pointer = NULL;
     }
