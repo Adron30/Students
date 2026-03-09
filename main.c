@@ -22,7 +22,7 @@ int main() {
     scanf("%d", &numerin);
     scanf("%c", &trash);
 
-    pointer = (student*)malloc(sizeof(student) * numerin); 
+    pointer = (student*)malloc(sizeof(student) * numerin);
 
     if (pointer != NULL) {
         for (i = 0; i < numerin; i++) {
@@ -52,10 +52,9 @@ int main() {
             printf("ID: %d\n", pointer[i].id);
             printf("Name: %s\n", pointer[i].name);
             printf("Grade: %.2f\n", pointer[i].grade);
+            free(pointer[i].name);
+            pointer[i].name = NULL;
         }
-
-        free(pointer[i].name);
-        pointer[i].name = NULL;
 
         free(pointer);
         pointer = NULL;
