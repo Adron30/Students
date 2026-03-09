@@ -48,12 +48,14 @@ int main() {
         }
 
         for (int i = 0; i < numerin; i++) {
-            printf("\n\nSTUDENT %d:\n", i + 1);
-            printf("ID: %d\n", pointer[i].id);
-            printf("Name: %s\n", pointer[i].name);
-            printf("Grade: %.2f\n", pointer[i].grade);
-            free(pointer[i].name);
-            pointer[i].name = NULL;
+            if (pointer[i].name) {
+                printf("\n\nSTUDENT %d:\n", i + 1);
+                printf("ID: %d\n", pointer[i].id);
+                printf("Name: %s\n", pointer[i].name);
+                printf("Grade: %.2f\n", pointer[i].grade);
+                free(pointer[i].name);
+                pointer[i].name = NULL;
+            }
         }
 
         free(pointer);
